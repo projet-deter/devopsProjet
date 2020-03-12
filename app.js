@@ -15,9 +15,7 @@ app.get("/histo", (req, res) => {
 
 app.post("/messages", (req, res) => {
   console.log(req.body);
-  res.status(200).send({
-    success: "true"
-  });
+  res.json(req.body.messages);
 });
 
 const PORT = 5000;
