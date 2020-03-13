@@ -8,20 +8,10 @@ var bodyParser = require("body-parser");
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-// get all todos
-app.get("/", (req, res) => {
-  /* Promise.resolve()
-    .then(() => {
-      return request.get({
-        url:
-          "https://modifymsgfunction20200312042701.azurewebsites.net/api/ModifyMessage?code=KL/UClMGc0CE55ofgVAGUhALAF5w7pcuozWQAQhyKq81Ihei/XHzPA=="
-      });
-    })
-    .then(body => {
-      res.json(body);
-    });
-*/
+app.use(cors.js);
 
+// get all todos
+app.get("/messages", (req, res) => {
   return request.get(
     {
       url:
