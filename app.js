@@ -1,5 +1,6 @@
 const request = require("request");
 const express = require("express");
+const cors = require("cors");
 // Set up the express app
 const app = express();
 const https = require("https");
@@ -8,7 +9,7 @@ var bodyParser = require("body-parser");
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-app.use(cors.js);
+app.use(cors());
 
 // get all todos
 app.get("/messages", (req, res) => {
